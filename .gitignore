@@ -1,2 +1,3 @@
-**/*.o
-./wordlib
+# Build artifacts
+*.o
+wordlib
