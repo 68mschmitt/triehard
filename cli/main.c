@@ -9,6 +9,26 @@ int main(void) {
     }
 
     wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
+    wordlib_add_word(wl, "hello");
+    wordlib_add_word(wl, "world");
     wordlib_add_word(wl, "world");
 
     printf("Word count: %zu\n", wordlib_count(wl));

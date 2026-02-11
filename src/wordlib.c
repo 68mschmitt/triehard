@@ -34,7 +34,7 @@ WordLib *wordlib_create(void) {
 }
 
 void wordlib_destroy(WordLib *wl) {
-    for (size_t i = 0; i < wl->capacity; ++i) {
+    for (size_t i = 0; i <= wl->count; ++i) {
         free(wl->words[i]);
     }
     free(wl->words);
@@ -43,6 +43,15 @@ void wordlib_destroy(WordLib *wl) {
 
 // Basic operations
 int wordlib_add_word(WordLib *wl, const char *word) {
+
+    // Resize the words size
+    if (wl->count >= wl->capacity) {
+        size_t newCapacity = wl->capacity + 10;
+        wl->words = realloc(wl->words, newCapacity * sizeof(char*));
+        wl->capacity = newCapacity;
+        printf("Capacity Increased to %zu\n", wl->capacity);
+    }
+
     wl->words[wl->count + 1] = my_strdup(word);
     return wl->count++;
 }
