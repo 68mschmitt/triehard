@@ -2,6 +2,7 @@
 #define WORDLIB
 
 #include "../include/wordlib.h"
+#include "util.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -33,14 +34,11 @@ WordLib *wordlib_create(void) {
 }
 
 void wordlib_destroy(WordLib *wl) {
+    for (size_t i = 0; i < wl->capacity; ++i) {
+        free(wl->words[i]);
+    }
+    free(wl->words);
     free(wl);
-}
-
-char *my_strdup(const char *s) {
-    size_t len = strlen(s) + 1;
-    char *copy = malloc(len);
-    if (copy) memcpy(copy, s, len);
-    return copy;
 }
 
 // Basic operations
